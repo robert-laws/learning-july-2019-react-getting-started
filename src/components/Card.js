@@ -18,6 +18,3 @@ class Card extends React.Component {
 }
 
 export default Card;
-
-// GitHub Api
-// api.github.com/users/robert-laws
