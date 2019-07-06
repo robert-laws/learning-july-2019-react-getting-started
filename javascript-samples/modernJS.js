@@ -103,3 +103,16 @@ const fetchData = async () => {
 }
 
 fetchData();
+
+// style -> logic with js
+// render() {
+//   return (
+//     <div className="github-profile">
+//       <img alt="profile" src="https://placehold.it/75" />
+//       <div className="info" style={{display: 'inline-block', marginLeft: 10}}>
+//         <div className="name" style={{fontWeight: 'bold', fontSize: '125%'}}>Name here...</div>
+//         <div className="company" style={{ color: Math.random() < 0.5 ? 'red' : 'blue' }}>Company here...</div>
+//       </div>
+//     </div>
+//   )
+// }

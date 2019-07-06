@@ -1,41 +1,22 @@
 import React from 'react';
-import Welcome from './components/Welcome';
-import WelcomeInput from './components/WelcomeInput';
-// import Button from './components/Button';
-import NewButton from './components/NewButton';
-import DisplayCounter from './components/DisplayCount';
+import CardList from './components/CardList';
+import Form from './components/Form';
+import testData from './data/github-data';
 
-export default class App extends React.Component {
+class App extends React.Component {
   state = {
-    name: '',
-    newCounter: 0
-  }
-
-  updateName = (newName) => {
-    this.setState({
-      name: newName
-    })
-  }
-
-  incrementCounter = (incrementValue) => {
-    this.setState({
-      newCounter: this.state.newCounter + incrementValue
-    })
+    profiles: testData
   }
 
   render() {
     return (
-      <>
-        <p>
-          <Welcome name={this.state.name} location={'home'} />
-          <WelcomeInput nameUpdate={this.updateName}/>
-        </p>
-        
-        <NewButton buttonAction={this.incrementCounter} incrementValue={5} />
-        <NewButton buttonAction={this.incrementCounter} incrementValue={25} />
-        <NewButton buttonAction={this.incrementCounter} incrementValue={100} />
-        <DisplayCounter number={this.state.newCounter} />
-      </>
+      <div>
+        <h1 className="title">{this.props.title}</h1>
+        <Form />
+        <CardList profiles={this.state.profiles} />
+      </div>
     )
   }
 }
+
+export default App;
