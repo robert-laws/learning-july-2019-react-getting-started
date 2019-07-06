@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 ReactDOM.render(
-  <App title="Star Match Game" />,
+  <App title="Post and Comments" />,
   document.getElementById("root")
 )
