@@ -1,23 +1,41 @@
 import React from 'react';
 import Welcome from './components/Welcome';
+import WelcomeInput from './components/WelcomeInput';
+// import Button from './components/Button';
+import NewButton from './components/NewButton';
+import DisplayCounter from './components/DisplayCount';
 
 export default class App extends React.Component {
   state = {
-    friend: ''
+    name: '',
+    newCounter: 0
   }
 
-  componentDidMount() {
+  updateName = (newName) => {
     this.setState({
-      friend: 'Kal Kool'
+      name: newName
+    })
+  }
+
+  incrementCounter = (incrementValue) => {
+    this.setState({
+      newCounter: this.state.newCounter + incrementValue
     })
   }
 
   render() {
     return (
-      <div>
-        <Welcome name={'Hal Hope'} />
-        <h4>friend: {this.state.friend}</h4>
-      </div>
+      <>
+        <p>
+          <Welcome name={this.state.name} location={'home'} />
+          <WelcomeInput nameUpdate={this.updateName}/>
+        </p>
+        
+        <NewButton buttonAction={this.incrementCounter} incrementValue={5} />
+        <NewButton buttonAction={this.incrementCounter} incrementValue={25} />
+        <NewButton buttonAction={this.incrementCounter} incrementValue={100} />
+        <DisplayCounter number={this.state.newCounter} />
+      </>
     )
   }
 }
